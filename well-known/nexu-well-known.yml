@@ -1,0 +1,160 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Anonymous HTTPS GETs of the RFC 8615 /.well-known/ registry paths against every host
+  Nexu operates (www.nexu.mx, the WordPress marketing origin landing.nexu.mx, and the
+  team.nexu.mx staff/client portal). Probed 2026-08-26.
+note: >-
+  NO POINTER IS EMITTED for this file. Every path missed. www.nexu.mx and team.nexu.mx
+  are Angular single-page applications whose catch-all route answers HTTP 200 with the
+  same HTML app shell for any unknown path - 36,529 bytes on www.nexu.mx and 22,673
+  bytes on team.nexu.mx, byte-identical to the shell served at "/". Those 200s are NOT
+  documents; they are recorded below as status 200 with served_document false so the
+  soft-200 is visible rather than silently credited. Extension-bearing paths (.json,
+  .txt) fall through to the WordPress origin and return a real 404. No security.txt, no
+  api-catalog, no OAuth/OIDC metadata, no ai-plugin.json and no A2A agent card exists on
+  any Nexu host.
+hosts:
+- host: www.nexu.mx
+  note: Angular SPA; unknown extensionless paths return the 36,529-byte app shell as HTTP 200.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not a security.txt.
+  - path: /.well-known/openid-configuration
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not OIDC metadata.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not RFC 8414 metadata.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not RFC 9728 metadata.
+  - path: /.well-known/api-catalog
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not an RFC 9727 api-catalog.
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+- host: landing.nexu.mx
+  note: WordPress origin behind the marketing pages; returns a real 404 page for every well-known path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    served_document: false
+    content_type: text/html
+    file: null
+- host: team.nexu.mx
+  note: Staff/client portal SPA; every path returns the same 22,673-byte app shell as HTTP 200.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not a security.txt.
+  - path: /.well-known/openid-configuration
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not OIDC metadata.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not RFC 8414 metadata.
+  - path: /.well-known/api-catalog
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, not an RFC 9727 api-catalog.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell.
+  - path: /.well-known/agent-card.json
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, rejected as an agent card - body is HTML, not an AgentCard object.
+  - path: /.well-known/agent.json
+    status: 200
+    served_document: false
+    content_type: text/html
+    file: null
+    note: SPA catch-all shell, rejected as an agent card - body is HTML, not an AgentCard object.
+summary:
+  hosts_probed: 3
+  paths_probed: 25
+  documents_served: 0
+  soft_200_shells: 16
+  hard_404s: 9
+  pointer_emitted: false

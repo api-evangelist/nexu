@@ -1,17 +1,40 @@
 aid: nexu
 name: Nexu
-description: 'Nexu is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Nexu is a Mexico City fintech that provides automotive financing at the point of sale.
+  Founded in 2014 by Abdon Nacif and Fernando Gomez Arriola, the company began as an auto
+  price and comparison site and now operates a digital lending platform used by car
+  dealerships across Mexico to originate credit and leasing offers in real time. Nexu
+  underwrites and funds two consumer products - credito automotriz (auto credit) and
+  arrendamiento (leasing with a purchase option and no residual), distributed through
+  partnerships with more than ten OEM dealer networks including Nissan, Volkswagen, Kia,
+  Hyundai, Mazda, Honda, Ford, Chevrolet, BMW and Audi. Applicants complete an onboarding
+  and identity flow in a browser application at nexu.mx and receive a decision without
+  visiting a branch. The company has raised roughly $73M across five equity rounds, plus
+  debt facilities, from Valor Capital Group, Altos Ventures, Wollef, Architect Capital,
+  Clocktower, Tresalia Capital, FJ Labs, Gilgamesh Ventures and others. As of this
+  profiling pass Nexu publishes no public API, developer portal, SDK or machine-readable
+  contract of any kind - see x-coverage below.
 url: https://raw.githubusercontent.com/api-evangelist/nexu/refs/heads/main/apis.yml
+image: https://nexu-rebranding-2025.s3.us-east-1.amazonaws.com/logo/png/logo-blue.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-source-url: https://www.hiive.com/securities/nexu-stock
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Financial Services
+- FinTech
+- Lending
+- Auto Finance
+- Leasing
+- Automotive
+- Consumer Credit
+- Mexico
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +42,52 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/nexu-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/nexu-stock
+  url: https://www.nexu.mx/
+- type: About
+  url: https://www.nexu.mx/quienes-somos/
+- type: Support
+  url: https://www.nexu.mx/contacto-cliente/
+- type: FAQ
+  url: https://www.nexu.mx/faq/
+- type: Blog
+  url: https://www.nexu.mx/blog/
+- type: BlogRSS
+  url: https://www.nexu.mx/blog/rss
+- type: TermsOfService
+  url: https://www.nexu.mx/terminos_y_condiciones
+- type: PrivacyPolicy
+  url: https://www.nexu.mx/aviso_de_privacidad
+- type: LinkedIn
+  url: https://www.linkedin.com/company/nexu-mx/
+- type: Instagram
+  url: https://www.instagram.com/nexu.mx/
+- type: Careers
+  url: https://nexu.breezy.hr/
+- type: LLMsTxt
+  url: llms/nexu-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Nexu ships only an end-user Angular application for car buyers and a staff portal at
+    team.nexu.mx - there is no developer page, no API reference and no machine-readable
+    contract on any host, and the customer app's own bundled config declares an empty,
+    same-origin private API base.
+  evidence:
+  - url: https://www.nexu.mx/openapi.json
+    status: 404
+  - url: https://www.nexu.mx/.well-known/agent-card.json
+    status: 404
+  - url: https://landing.nexu.mx/llms.txt
+    status: 404
+  - url: https://www.nexu.mx/sitemap.xml
+    status: 200
+  checked: '2026-08-26'
