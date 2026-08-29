@@ -16,6 +16,17 @@ description: >-
   profiling pass Nexu publishes no public API, developer portal, SDK or machine-readable
   contract of any kind - see x-coverage below.
 url: https://raw.githubusercontent.com/api-evangelist/nexu/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://nexu-rebranding-2025.s3.us-east-1.amazonaws.com/logo/png/logo-blue.png
 x-type: company
 x-source: harvest:secondary-market
